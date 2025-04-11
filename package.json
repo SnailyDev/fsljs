@@ -1,0 +1,12 @@
+{
+  "name": "fsljs",
+  "version": "1.1.1",
+  "main": "./src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": ["framework", "js", "javascript"],
+  "author": "SnailyDev",
+  "license": "Apache-2.0",
+  "description": "Fast, simple and lightweight JavaScript frontend framework."
+}
