@@ -1,16 +1,16 @@
 "use strict";
 
+const configProps = {};
+const allowedKeys = [
+  "appName",
+  "version",
+  "environment",
+  "author",
+  "description",
+];
+let elements = [];
 export class FslJS {
   constructor() {
-    this.configProps = {};
-    this.allowedKeys = [
-      "appName",
-      "version",
-      "environment",
-      "author",
-      "description",
-    ];
-    this.elements = [];
   }
 
   /**
@@ -26,7 +26,7 @@ export class FslJS {
 
   setConfig(config) {
     for (let key in config) {
-      if (!this.allowedKeys.includes(key)) {
+      if (!allowedKeys.includes(key)) {
         throw new Error(
           `Unknown configuration key: ${key}. Allowed configuration keys are: ${this.allowedKeys.join(
             ", "
@@ -42,39 +42,39 @@ export class FslJS {
     if (typeof config.version !== "string") {
       throw new Error("version must be a string");
     }
-    this.configProps = { ...config };
+    configProps = { ...config };
 
     return this;
   }
 
   getConfig() {
-    for (let key in this.configProps) {
-      console.log(`${key}: ${this.configProps[key]}`);
+    for (let key in configProps) {
+      console.log(`${key}: ${configProps[key]}`);
     }
     return this;
   }
 
   $(element) {
-    this.elements = document.querySelectorAll(element); // Select all matching elements
+    elements = document.querySelectorAll(element); // Select all matching elements
     return this;
   }
 
   setHTML(html) {
-    if (this.elements.length === 0) {
+    if (elements.length === 0) {
       console.warn("No elements selected. Ensure the selector is correct.");
       return this;
     }
-    this.elements.forEach((el) => {
+    elements.forEach((el) => {
       el.innerHTML = html;
     });
     return this;
   }
   textContent(text) {
-    if (this.elements.length === 0) {
+    if (elements.length === 0) {
       console.warn("No elements selected. Ensure the selector is correct.");
       return this;
     }
-    this.elements.forEach((el) => {
+    elements.forEach((el) => {
       el.textContent = text;
     });
     return this;
