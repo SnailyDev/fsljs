@@ -6,11 +6,13 @@ FslJS is a Fast, Simple, and Lightweight framework for DOM mainpulation made in 
 
 Install FslJS with `npm i fsljs`, and you're done!
 
-Note that we will make a installer/manager for FslJS speciffically!
+<span style="background-color:rgba(222, 226, 0, 0.67); color: white; padding: 4px; border-radius: 7px;">💡Note that we will make a installer/manager for FslJS speciffically!</span>
 
 ### How to use
 
-For now, we just implemented some basic functions:
+### Functions
+
+Some functions to use:
  - `setConfig(config)`: Sets a config for FslJS, e. g.:
     ```javascript
     fsl.setConfig({
@@ -52,6 +54,22 @@ For now, we just implemented some basic functions:
     ```javascript
     fsl.$(".my-paragraph").textContent("Hello, World!");
     ```
+
+#### Components <sup style="background-color: purple; border-radius: 5px; color: white; padding: 2px;">ALPHA</sup>
+
+Easly make new components, such as buttons!
+In components, you just instantiate a class, add settings, and more!
+
+Components made:
+ - Component (default one)
+ - ButtonComponent (make a button)
+
+Use it instantianting a class and in the parameters putting the label.
+Depending on the type of the component, there are different types of
+parameters. This one is from the ButtonComponent one:
+```javascript
+let myButton = new ButtonComponent("Hello, World!", false,  "myHelloWorldButton");
+```
 
 ### License
 
