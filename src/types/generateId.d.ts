@@ -1,0 +1,1 @@
+function generateId(length: number = 8): string;
