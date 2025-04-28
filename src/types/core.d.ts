@@ -1,12 +1,18 @@
+export interface ConfigProps {
+  appName: string;
+  version: string;
+  description: string;
+  license: string;
+  licenseUrl?: string;
+  repository?: string;
+  repositoryUrl?: string;
+  author: string;
+}
+
 export declare class FslJS {
   constructor();
 
-  setConfig(
-    config: Record<
-      "appName" | "version" | "environment" | "author" | "description",
-      string
-    >
-  ): this;
+  setConfig(config: ConfigProps): this;
   getConfig(): this;
   $(element: string): this;
   setHTML(html: string): this;
